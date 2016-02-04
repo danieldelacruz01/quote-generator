@@ -1,9 +1,9 @@
-//$(document).ready(function(){
- var number = 0; 
+$(document).ready(function(){
+var number; 
 var data = {
   "quotes": [{
-    "quote": "they keep saying 'there are plenty more fish  in the sea' i say fuck you she was my sea",
-    "name": "Christopher poindexter",
+    "quote": "They keep saying 'there are plenty more fish in the sea.' I say fuck you she was my sea.",
+    "name": "Christopher Poindexter",
     "img": "img/p2.jpg"
       },
   {
@@ -12,7 +12,7 @@ var data = {
     "img": "img/p2.jpg"
   },
   {
-    "quote": "two things are infinite, the univers, and human stupidity....and im not sure about the universe",
+    "quote": "Two things are infinite: the universe, and human stupidity.... and I'm not sure about the universe.",
     "name": "Albert Einstein",
     "img": "img/p2.jpg"
   }]
@@ -24,21 +24,19 @@ $("button").click(function(){
 
 function random(){
    number = Math.floor(Math.random()*data.quotes.length)
-  
-  
-  
+
 }
  function display(){
     $("#quote").html(data.quotes[number].quote);
    $("#name").html("~ " + data.quotes[number].name);
-   $("#imagedrop").attr("src", data.quotes[number].img)
-   
+   $("#imagedrop").attr("src", data.quotes[number].img) 
  }
 
 function getQuote(){
-  display();
   random();
+  display();
+  
 }
 
-//});
+});
 
