@@ -108,7 +108,8 @@ var data = {
 var bgColour = ["#F44336","#E91E63","#9C27B0","#673AB7","#3F51B5","#2196F3","#009688","#FF5722","#795548","#607D8B"]
 
 $("button").click(function(){
-    getQuote();
+  $(".bubble, .bubble:after").removeClass('animated zoomIn');
+  getQuote();
 });
 
 function random(){
@@ -116,15 +117,19 @@ function random(){
 
 }
  function display(){
-   $("#quote").html(data.quotes[number].quote);
-   $("#name").html(data.quotes[number].name);
-   $("#imagedrop").attr("src", data.quotes[number].img); 
+  var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+  $("#quote").html(data.quotes[number].quote);
+  $("#name").html(data.quotes[number].name);
+  $("#imagedrop").attr("src", data.quotes[number].img); 
+  $(".bubble, .bubble:after").addClass('animated fadeIn').one(animationEnd, function() {
+      $(this).removeClass('animated fadeIn');
+        });
  }
 
  function setColour() {
   var colour = bgColour[Math.floor(Math.random()*bgColour.length)];
   $("body").css("background-color", colour);
-  $("h4").css("font-color", colour + " !important");
  };
 
 function getQuote(){

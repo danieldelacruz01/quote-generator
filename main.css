@@ -2,13 +2,26 @@ body {
   background-color: gray;
 }
 
-#bigquote {
-  font-size: 60px;
+p {
+  color: white;
+  font-size: 2em;
+}
+
+#header, #footer {
+  padding: 50px;
+  background: #FFFFFF;
+  opacity: 30%;
+}
+
+#quote {
+  color: black;
+  font-size: 2em;
 }
 
 #name {
   text-align: center;
   margin-top: 15px;
+  margin-bottom: 75px;
 }
 
 #imagedrop {
@@ -18,9 +31,8 @@ body {
 
 .bubble 
 {
+margin-top: 75px;
 position: relative;
-/*width: 500px;
-height: 200px;*/
 padding: 50px;
 background: #FFFFFF;
 -webkit-border-radius: 37px;
@@ -30,6 +42,7 @@ border-radius: 37px;
 
 .bubble:after 
 {
+margin-top: 75px;
 content: '';
 position: absolute;
 border-style: solid;
@@ -43,6 +56,3 @@ bottom: -40px;
 left: 50%;
 }
 
-.center {
-  text-align: center;
-}
